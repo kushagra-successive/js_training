@@ -1,4 +1,4 @@
-                                <Twelev-Factor App>
+#                                Tweleve-Factor App
 
 Twelve-factor app is a set of principles or methodology for building modernise,scalable,portable and maintainable cloud native web application architecture also known as SaaS application.SaaS stands for Software-As-A-Service,it is on demand service which provides software services to utilize by the cloud vendors.These Twelve-factor app is published by the co-founder of Heroku by the experiences and observations of the people working at Heroku.These are built for agility and rapid deployment.
 
@@ -38,7 +38,7 @@ Twelve-factor app is a set of principles or methodology for building modernise,s
 12. Admin Processes:
     "Run admin/management tasks as one-off processes" it refers that any needed admin tasks should be kept in source control and packaged with the application.Use built-in tool of the execution environment to run those scripts.
 
-                               <Atomic Design>
+      #                         Atomic Design
 
     Atomic Design is methodology for creating and maintaining robust design systems, allowing you to roll out higher quality, more consistent UIs faster.Basically it has 5 distinct levels in atomic design :
 
