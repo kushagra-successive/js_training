@@ -1,4 +1,4 @@
-let sum = function (num1,num2) {
- return  num1+num2;
-}
-console.log(sum(40,12));
+let sum = function (num1, num2) {
+  return num1 + num2;
+};
+console.log(sum(40, 12));

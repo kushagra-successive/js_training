@@ -1,10 +1,8 @@
-let base = function (another) {
-
-      console.log("Moving to another function :");
-      another("Kushagra");
-  }
-  let another = function () {
-      console.log(`I am in another function`);
-  }
-  base(another,10);
-  
+let baseFunction = function (another) {
+  console.log("I am in baseFunction");
+  anotherFunction();
+};
+let anotherFunction = function () {
+  console.log(`I am in anotherFunction`);
+};
+baseFunction(anotherFunction, 10);
