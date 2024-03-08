@@ -7,6 +7,6 @@ const userDetails = [
   { Name: "Vinod", age: 28, id: 1532 },
 ];
 for (let obj of userDetails) {
-  delete obj.id;
+  delete obj.id; //deleting the property id
 }
 console.log(userDetails);

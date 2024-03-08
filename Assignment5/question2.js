@@ -6,5 +6,5 @@ const userDetails = [
   { Name: "Pawan", age: 41, isMarried: true },
   { Name: "Vinod", age: 28, isMarried: false },
 ];
-userDetails.sort((a, b) => a.age - b.age);
+userDetails.sort((a, b) => a.age - b.age); //sorting by age
 console.log(userDetails);
