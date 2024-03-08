@@ -1,3 +1,5 @@
+//program to reverse a string ("Hello John" => "olleH nhoJ")
+
 let str = "Hello John";
 let arr = str.split(" ");
 let reversedString = " ";

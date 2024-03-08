@@ -1,3 +1,5 @@
+//program to return inverse of an array
+
 let arr = [10, 2, 30, 1, 8, 3];
 let max = Math.max(...arr);
 let newArray = Array(max);

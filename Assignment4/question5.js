@@ -1,3 +1,5 @@
+//program to convert given string in camel case ("hello john doe" => helloJohnDoe)
+
 let str = "hello john doe";
 str = str.toLowerCase();
 let newArray = str.split(" ");

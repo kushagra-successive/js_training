@@ -1,3 +1,5 @@
+//program to display intersection of two array
+
 let array1 = [1, 5, 7, 8, 9];
 let array2 = [1, 7, 1, 2, 5, 9, 1, 5];
 let intersectedArray = [];
