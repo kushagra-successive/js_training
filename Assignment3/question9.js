@@ -7,7 +7,7 @@ console.log("fibanocci series");
 for (let i = 0; i <= limit; i++) {
   if (i <= 1) console.log(i);
   else {
-    let n3 = n1 + n2;
+    let n3 = n1 + n2; //adding the previous number
     console.log(n3);
     n1 = n2;
     n2 = n3;

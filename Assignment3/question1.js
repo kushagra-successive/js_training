@@ -1,7 +1,11 @@
 //program to perform functionality of a calculator (add,sub,multiply,divide)
 
+//taking operands from user for calculation
+// '+' before prompt convert into number from string
 let num1 = +prompt("Enter value1 ");
 let num2 = +prompt("Enter value2 ");
+
+//taking user's choice as input for operation
 let operation = +prompt("Enter 1:Add , 2:Subtract , 3:Multiply , 4:Divide ");
 
 switch (operation) {
@@ -22,6 +26,6 @@ switch (operation) {
     break;
   }
   default:
-    console.log("Wrong Entry");
+    console.log("Wrong Entry"); //when user give invalid input
     break;
 }

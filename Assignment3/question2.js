@@ -48,19 +48,23 @@ console.log();
 1 2 3 4 5
 */
 
-let newnum = 5;
+//for first half of the given pattern
+
+let newnum = 5; // newnum for size
 for (let row = 0; row < 5; row++) {
-  let str = " ";
+  let str = " "; //this string add new elemnet everytime in single line
   for (let column = 0; column < newnum; column++) {
     str += column + 1 + " ";
   }
   console.log(str);
-  newnum--;
+  newnum--; //decremnet according to columns
 }
+//for second half of the given pattern
 for (let row = 0; row < 5; row++) {
   let str = " ";
   for (let column = 0; column < row + 1; column++) {
     str += column + 1 + " ";
   }
   if (row != 0) console.log(str);
+  //this time we don't want to print 1 again becasuse already printed
 }
