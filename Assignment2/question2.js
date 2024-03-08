@@ -6,4 +6,4 @@ const details = function () {
   let phoneNumber = prompt("Enter the phoneNumber : ");
   console.log("name: ", name + "\nage: ", age + "\nphoneNumber: ", phoneNumber);
 };
-details();
+details(); //printing the userDetails

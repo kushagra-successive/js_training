@@ -2,9 +2,9 @@
 
 let baseFunction = function (another) {
   console.log("I am in baseFunction");
-  anotherFunction();
+  anotherFunction(); //function call to lastFunction
 };
 let anotherFunction = function () {
   console.log(`I am in anotherFunction`);
 };
-baseFunction(anotherFunction, 10);
+baseFunction(anotherFunction); //function call to firtsFunction
