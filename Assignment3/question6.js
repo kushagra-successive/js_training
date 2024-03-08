@@ -1,3 +1,5 @@
+//program to display prime numbers from 1 to 50
+
 let n = 50;
 for (let i = 2; i <= n; i++) {
   let bool = false;

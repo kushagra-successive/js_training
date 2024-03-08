@@ -1,3 +1,17 @@
+//program to display Diamond Pattern
+
+/*
+       * 
+      * * 
+     * * * 
+    * * * * 
+   * * * * * 
+    * * * * 
+     * * * 
+      * * 
+       * 
+*/
+
 let num = 5;
 for (let row = 0; row < num; row++) {
   let space = " ";

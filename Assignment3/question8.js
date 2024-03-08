@@ -1,3 +1,5 @@
+//program to dispaly number from 1-20 using all types of loops
+
 //while loop
 
 let num1 = 1;

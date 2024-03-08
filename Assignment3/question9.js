@@ -1,3 +1,5 @@
+//program to print fibonaaci series
+
 let n1 = 0,
   n2 = 1;
 let limit = 10;

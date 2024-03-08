@@ -1,3 +1,5 @@
+//program to print all even number first and then all odd numbers using only one iteration
+
 let size = 50;
 let arr_even = [];
 let arr_odd = [];

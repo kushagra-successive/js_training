@@ -1,3 +1,5 @@
+//program to perform functionality of a calculator (add,sub,multiply,divide)
+
 let num1 = +prompt("Enter value1 ");
 let num2 = +prompt("Enter value2 ");
 let operation = +prompt("Enter 1:Add , 2:Subtract , 3:Multiply , 4:Divide ");
