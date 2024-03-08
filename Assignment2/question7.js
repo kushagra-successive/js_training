@@ -1,3 +1,5 @@
+//questions from 3-6 needs to be done with arrow functions also
+
 //3. arrow function that takes in another function as an argument
 
 let baseFunction = (another) => {

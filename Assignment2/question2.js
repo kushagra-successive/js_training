@@ -1,3 +1,5 @@
+//function to take input(age, name, phone no.) from user and display it
+
 const details = function () {
   let name = prompt("Enter the name : ");
   let age = prompt("Enter the age : ");

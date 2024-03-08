@@ -1,3 +1,5 @@
+//program to give a random output between 1 to 10 (AC: 2 simultaneous answers not be same)
+
 let condition = "Y";
 let prev = -1;
 while (condition == "Y") {
@@ -6,5 +8,5 @@ while (condition == "Y") {
     console.log(num1);
   }
   prev = num1;
- condition = prompt("enter Y for Continue else press anything:");
+  condition = prompt("enter Y for Continue else press anything:");
 }
