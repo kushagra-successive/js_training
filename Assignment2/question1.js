@@ -2,7 +2,7 @@
 
 let condition = "Y";
 let prev = -1;
-//loop save previous value and then comapre with next random value everytime until termination
+//loop save previous value and then compare with next random value everytime until termination
 while (condition == "Y") {
   let num1 = Math.floor(Math.random() * 10 + 1);
   if (num1 != prev) {
