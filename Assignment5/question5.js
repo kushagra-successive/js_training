@@ -14,13 +14,13 @@ function flattenObject(obj) {
   let result = {};
   for (let i in obj) {
     if (typeof obj[i] === "object") {
-      //i -->b
-      let temp = flattenObject(obj[i]); //{c:2,d:2};
+      //if object then again recursive call and the returned answer is also object stored in temp
+      let temp = flattenObject(obj[i]); 
       for (let j in temp) {
-        result[i + "." + j] = temp[j]; // b.c=2
+        result[i + "." + j] = temp[j];  // so variable temp has object which is iterated through forin loop and store answer in result object
       }
     } else {
-      result[i] = obj[i];
+      result[i] = obj[i]; // if typeof is not object then direct store key and values
     }
   }
   return result; //returning the obj
