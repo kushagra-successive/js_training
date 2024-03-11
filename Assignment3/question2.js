@@ -65,6 +65,6 @@ for (let row = 0; row < 5; row++) {
   for (let column = 0; column < row + 1; column++) {
     str += column + 1 + " ";
   }
-  if (row != 0) console.log(str);
+  if (row !== 0) console.log(str);
   //this time we don't want to print 1 again becasuse already printed
 }

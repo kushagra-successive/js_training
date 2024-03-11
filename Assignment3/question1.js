@@ -2,11 +2,11 @@
 
 //taking operands from user for calculation
 // '+' before prompt convert into number from string
-let num1 = +prompt("Enter value1 ");
-let num2 = +prompt("Enter value2 ");
+const num1 = +prompt("Enter value1 ");
+const num2 = +prompt("Enter value2 ");
 
 //taking user's choice as input for operation
-let operation = +prompt("Enter 1:Add , 2:Subtract , 3:Multiply , 4:Divide ");
+const operation = +prompt("Enter 1:Add , 2:Subtract , 3:Multiply , 4:Divide ");
 
 switch (operation) {
   case 1: {
