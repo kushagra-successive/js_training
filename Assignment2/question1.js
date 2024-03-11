@@ -5,7 +5,7 @@ let prev = -1;
 //loop save previous value and then comapre with next random value everytime until termination
 while (condition == "Y") {
   let num1 = Math.floor(Math.random() * 10 + 1);
-  if (num1 != prev) {
+  if (num1 !== prev) {
     console.log(num1);
   }
   prev = num1;
