@@ -1,5 +1,3 @@
-//program flattenObject that takes an object with nested properties and returns a flat object with the nested properties transformed into dot-separated properties. The function should handle nested objects and arrays.
-
 const college = {
   collegeName: "GL Bajaj",
   year: 2024,
@@ -11,18 +9,18 @@ const college = {
 };
 
 function flattenObject(obj) {
-  let result = {};
+  let ans = {};
   for (let i in obj) {
     if (typeof obj[i] === "object") {
-      //i -->b
-      let temp = flattenObject(obj[i]); //{c:2,d:2};
-      for (let j in temp) {
-        result[i + "." + j] = temp[j]; // b.c=2
+      //if object then again recursive call and the returned answer is also object stored in temp
+      let innerObject = flattenObject(obj[i]);
+      for (let j in innerObject) {
+        ans[i + "." + j] = innerObject[j]; // so variable temp has object which is iterated through forin loop and store answer in result object
       }
     } else {
-      result[i] = obj[i];
+      ans[i] = obj[i]; // if typeof is not object then direct store key and values
     }
   }
-  return result; //returning the obj
+  return ans; //returning the obj
 }
 console.log(flattenObject(college));
