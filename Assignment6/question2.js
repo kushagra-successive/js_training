@@ -22,8 +22,8 @@ class Rectangle extends Shape {
 }
 class Triangle extends Shape {
   //inheriting the properties from base class
-  constructor(base, height) {
-    super(base, height);
+  constructor(width, height) {
+    super(width, height);
   }
 
   getArea() {
