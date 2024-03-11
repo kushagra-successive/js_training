@@ -1,6 +1,6 @@
 //program to find sum of an array
 
-let arr = [10, 22, 3, 4, 8, 5];
-let sum = arr.reduce((accumulator, item) => accumulator + item, 0);
+const arr = [10, 22, 3, 4, 8, 5];
+const sum = arr.reduce((accumulator, item) => accumulator + item, 0);
 console.log(sum);
 //reduce perform praticular operation by taking its initial value by accumulator and return single value

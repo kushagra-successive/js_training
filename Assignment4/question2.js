@@ -1,7 +1,7 @@
 //program to reverse a string ("Hello John" => "olleH nhoJ")
 
-let str = "Hello John";
-let arr = str.split(" "); // convert into array and split by its space
+const str = "Hello John";
+const arr = str.split(" "); // convert into array and split by its space
 let reversedString = " "; // new string for storing reversed characters
 
 for (let i = 0; i < arr.length; i++) {

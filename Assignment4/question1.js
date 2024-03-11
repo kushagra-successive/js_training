@@ -1,6 +1,6 @@
 //program to remove duplicate charecters from a string ("Hello Yellow" => "Helo Yw")
 
-let str = "Hello Yellow";
+const str = "Hello Yellow";
 let ansString = ""; //empty string to insert the new values
 for (let i = 0; i < str.length; i++) {
   if (!ansString.includes(str[i])) {
