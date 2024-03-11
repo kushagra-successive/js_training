@@ -11,7 +11,7 @@ const object1 = {
   marks: [89, 91, 97, 89],
 };
 
-let user = JSON.parse(JSON.stringify(object1)); // deep clone
+const user = JSON.parse(JSON.stringify(object1)); // deep clone
 user.marks[0] = 100;
 user.age = 23;
 console.log(user);
