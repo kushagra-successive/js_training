@@ -1,15 +1,12 @@
 //program to print fibonaaci series
 
-let n1 = 0,
-  n2 = 1;
-let limit = 10;
-console.log("fibanocci series");
-for (let i = 0; i <= limit; i++) {
-  if (i <= 1) console.log(i);
-  else {
-    let n3 = n1 + n2; //adding the previous number
-    console.log(n3);
-    n1 = n2;
-    n2 = n3;
+function fibonacci(number) {
+  if (number == 0 || number == 1) {
+    return number;
   }
+  return fibonacci(number - 1) + fibonacci(number - 2);
+}
+
+for (let i = 0; i <= 10; i++) {
+  console.log(fibonacci(i));
 }
