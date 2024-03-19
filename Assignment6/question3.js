@@ -19,7 +19,7 @@ class Person {
   }
 }
 
-const personObj = new Person("Kushagra Bajpai", 23, "mal3", [
+const personObj = new Person("Kushagra Bajpai", 23, "male", [
   "Travelling",
   "Playing Cricket",
   "Singing",
@@ -45,7 +45,7 @@ class Student extends Person {
 const studentObj = new Student(
   "Kushagra Bajpai",
   23,
-  "mal3",
+  "male",
   ["Travelling", "Playing Cricket", "Singing"],
   "Javascript"
 );
@@ -66,7 +66,7 @@ class Teacher extends Person {
 const teacherObj = new Teacher(
   "Kushagra Bajpai",
   23,
-  "mal3",
+  "male",
   ["Travelling", "Playing Cricket", "Singing"],
   "Mathematics"
 );
