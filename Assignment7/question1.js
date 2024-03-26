@@ -7,12 +7,20 @@ const options = {
     "X-RapidAPI-Host": "random-word-api.p.rapidapi.com",
   },
 };
-const print = (result) => console.log(result);
+const print = (error, result) => {
+  if (error) console.log("Error Occured", error);
+  else console.log(result);
+};
 const fetching = (callback) => {
   fetch("https://random-word-api.p.rapidapi.com/get_word", options) // fetching API
-    .then((resolve) => resolve.json()) //returns promise
+    .then((resolve) => {
+      if (!resolve.ok)
+        throw new Error(`Error Occured with Status Code ${resolve.status}`);
+      else return resolve.json();
+    }) //returns promise
     .then((result) => {
-      callback(result);
-    });
+      callback(null, result);
+    })
+    .catch((error) => callback(error));
 };
 fetching(print);
