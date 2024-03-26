@@ -1,20 +1,44 @@
 // Write a program to implement a Promise-based task queue, that processes tasks in a specified order, with a specified concurrency limit
+class TaskQueue {
+  constructor(maxConcurrency) {
+    this.maxConcurrency = maxConcurrency; //number of tasks allowed
+    this.taskQueue = []; //array to hold tasks
+    this.runningTasks = 0; //counter for track of currently running task
+  }
 
-const Queue = (i, limit) => {
-  return new Promise((resolve, reject) => {
-    if (i <= limit) resolve(`promise resolved for request${i}`);
-    else reject("limit exceeded now");
-  });
+  async addTask(task) {
+    this.taskQueue.push(task); // adding task in queue
+    await this.processTasks();
+  }
+
+  async processTasks() {
+    while (
+      this.runningTasks < this.maxConcurrency &&
+      this.taskQueue.length > 0
+    ) {
+      const task = this.taskQueue.shift();
+      this.runningTasks++;
+      await task(); //it always call myTask(i)
+      this.runningTasks--;
+    }
+  }
+}
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const myTask = async (number) => {
+  console.log(`Task ${number} started`);
+  await delay(Math.random() * 2000); //async work
+  console.log(`Task ${number} completed`);
 };
 
-const limit = 5;
-const size = 7;
-for (let i = 1; i <= size; i++) {
-  Queue(i, limit)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
+const main = async () => {
+  const maxConcurrency = 3;
+  const taskQueue = new TaskQueue(maxConcurrency);
+
+  for (let i = 1; i <= 10; i++) {
+    taskQueue.addTask(() => myTask(i));
+  }
+};
+
+main();
