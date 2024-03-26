@@ -16,6 +16,7 @@ class TaskQueue {
       this.runningTasks < this.maxConcurrency &&
       this.taskQueue.length > 0
     ) {
+      //run until condition terminated
       const task = this.taskQueue.shift();
       this.runningTasks++;
       await task(); //it always call myTask(i)
@@ -24,7 +25,7 @@ class TaskQueue {
   }
 }
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); //for making delay
 
 const myTask = async (number) => {
   console.log(`Task ${number} started`);
