@@ -1,45 +1,50 @@
 // Write a program to implement a Promise-based task queue, that processes tasks in a specified order, with a specified concurrency limit
+
 class TaskQueue {
-  constructor(maxConcurrency) {
-    this.maxConcurrency = maxConcurrency; //number of tasks allowed
-    this.taskQueue = []; //array to hold tasks
-    this.runningTasks = 0; //counter for track of currently running task
+  constructor(concurrency) {
+    this.concurrency = concurrency;
+    this.runningTask = 0;
+    this.queue = [];
   }
 
-  async addTask(task) {
-    this.taskQueue.push(task); // adding task in queue
-    await this.processTasks();
-  }
+  addTask(task) {
+    // Add the task to the queue
+    this.queue.push(task);
+    // Increment the number of running tasks
+    this.runningTask++;
 
-  async processTasks() {
-    while (
-      this.runningTasks < this.maxConcurrency &&
-      this.taskQueue.length > 0
-    ) {
-      //run until condition terminated
-      const task = this.taskQueue.shift();
-      this.runningTasks++;
-      await task(); //it always call myTask(i)
-      this.runningTasks--;
+    // Check if the number of running tasks exceeds or equal to the concurrency limit
+    if (this.runningTask >= this.concurrency) {
+      this.processQueue();
     }
+  }
+
+  async processQueue() {
+    const concurrentQueue = [];
+    // Process tasks up to the concurrency limit
+    for (let i = 0; i < this.concurrency; i++) {
+      // Remove the concurrent task from the queue and schedule it for execution
+      const runTask = this.queue.shift();
+      concurrentQueue.push(runTask);
+    }
+    this.runningTask = this.runningTask - this.concurrency;
+    const result = await Promise.all(concurrentQueue);
+    console.log(result);
+    console.log("\n");
   }
 }
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); //for making delay
+const taskQueue1 = new TaskQueue(2);
 
-const myTask = async (number) => {
-  console.log(`Task ${number} started`);
-  await delay(Math.random() * 2000); //async work
-  console.log(`Task ${number} completed`);
-};
+const promise = (n) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("task started");
+      resolve(`Task ${n}`);
+    }, n * 500);
+  });
 
-const main = async () => {
-  const maxConcurrency = 3;
-  const taskQueue = new TaskQueue(maxConcurrency);
-
-  for (let i = 1; i <= 10; i++) {
-    taskQueue.addTask(() => myTask(i));
-  }
-};
-
-main();
+for (let i = 1; i <= 10; i++) {
+  // calling addTask method
+  taskQueue1.addTask(promise(i));
+}
